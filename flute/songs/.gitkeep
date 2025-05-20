@@ -1,0 +1,26 @@
+<!-- Example of a song entry template -->
+<div class="song-card">
+    <div class="song-info">
+        <h3>Song Title</h3>
+        <p>Artist: <span class="artist-name">Artist Name</span></p>
+        <p>Difficulty: <span class="difficulty">Intermediate</span></p>
+    </div>
+    <div class="song-resources">
+        <div class="sheet-music">
+            <h4>Sheet Music</h4>
+            <!-- Link to PDF or image of sheet music -->
+            <a href="path-to-sheet-music.pdf">View Sheet Music</a>
+        </div>
+        <div class="practice-tracks">
+            <h4>Practice Resources</h4>
+            <!-- YouTube embedding or audio file links -->
+            <a href="youtube-link">Tutorial Video</a>
+            <a href="backing-track">Backing Track</a>
+        </div>
+        <div class="notes">
+            <h4>Practice Notes</h4>
+            <!-- Area for adding practice notes -->
+            <textarea placeholder="Add your practice notes here..."></textarea>
+        </div>
+    </div>
+</div>
