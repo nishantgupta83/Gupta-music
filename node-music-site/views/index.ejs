@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Ridhi & Dhruv - Da Young Musicians Hub</h1>
+            <h1>Young Musicians Hub</h1>
         </div>
 
         <div class="nav-menu">
@@ -19,8 +19,7 @@
                 <button class="dropbtn">Flute</button>
                 <div class="dropdown-content">
                     <a onclick="showSection('flute-songs')">Songs</a>
-                    <a onclick="showSection('flute-practice')">Practice Tips</a>
-                    <a onclick="showSection('flute-achievements')">Achievements</a>
+                    <a onclick="showSection('flute-practice')">Practice</a>
                 </div>
             </div>
 
@@ -28,13 +27,11 @@
                 <button class="dropbtn">Drums</button>
                 <div class="dropdown-content">
                     <a onclick="showSection('drum-songs')">Songs</a>
-                    <a onclick="showSection('drum-practice')">Practice Tips</a>
-                    <a onclick="showSection('drum-achievements')">Achievements</a>
+                    <a onclick="showSection('drum-practice')">Practice</a>
                 </div>
             </div>
         </div>
 
-        <!-- Home Section with Kids Profiles -->
         <div id="home" class="content-section">
             <h2>Welcome to Our Music Journey</h2>
             
@@ -43,11 +40,11 @@
                     <h3><%= children.child1.name %>'s Corner</h3>
                     <div class="profile-content">
                         <div class="profile-info">
-                            <p class="age">Age: <%= children.child1.age %></p>
-                            <p class="instruments">Instruments: <%= children.child1.instruments.join(', ') %></p>
+                            <p>Age: <%= children.child1.age %></p>
+                            <p>Instruments: <%= children.child1.instruments.join(', ') %></p>
                         </div>
                         <div class="profile-about">
-                            <h4>About Me</h4>
+                            <h4>About</h4>
                             <p><%= children.child1.about %></p>
                         </div>
                         <div class="achievements">
@@ -65,11 +62,11 @@
                     <h3><%= children.child2.name %>'s Corner</h3>
                     <div class="profile-content">
                         <div class="profile-info">
-                            <p class="age">Age: <%= children.child2.age %></p>
-                            <p class="instruments">Instruments: <%= children.child2.instruments.join(', ') %></p>
+                            <p>Age: <%= children.child2.age %></p>
+                            <p>Instruments: <%= children.child2.instruments.join(', ') %></p>
                         </div>
                         <div class="profile-about">
-                            <h4>About Me</h4>
+                            <h4>About</h4>
                             <p><%= children.child2.about %></p>
                         </div>
                         <div class="achievements">
@@ -85,10 +82,17 @@
             </div>
         </div>
 
-        <!-- Other sections remain the same -->
-        <!-- ... -->
+        <div id="flute-songs" class="content-section">
+            <h2>Flute Songs</h2>
+            <!-- Add your flute songs content here -->
+        </div>
 
+        <div id="drum-songs" class="content-section">
+            <h2>Drum Songs</h2>
+            <!-- Add your drum songs content here -->
+        </div>
     </div>
+
     <script src="/js/main.js"></script>
 </body>
 </html>
