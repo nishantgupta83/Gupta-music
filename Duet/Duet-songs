@@ -1,0 +1,16 @@
+<div class="duets-section">
+    <h2>Flute & Drums Duets</h2>
+    <div class="duet-card">
+        <h3>Duet Title</h3>
+        <div class="parts">
+            <div class="flute-part">
+                <h4>Flute Part</h4>
+                <!-- Flute sheet music and resources -->
+            </div>
+            <div class="drum-part">
+                <h4>Drums Part</h4>
+                <!-- Drums sheet music and resources -->
+            </div>
+        </div>
+    </div>
+</div>
