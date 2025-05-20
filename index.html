@@ -44,45 +44,67 @@
         }
 
         /* Dropdown Styles */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+/* Update your existing dropdown styles with these */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+}
 
-        .dropbtn {
-            background-color: #34495e;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
+.dropbtn {
+    background-color: #34495e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 4px;
-        }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    margin-top: 5px;
+}
 
-        .dropdown-content a {
-            color: #333;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            transition: background-color 0.3s;
-        }
+.dropdown-content a {
+    color: #333333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s;
+}
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Add this for better mobile responsiveness */
+@media (max-width: 768px) {
+    .dropdown {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .dropbtn {
+        width: 100%;
+        text-align: left;
+    }
+
+    .dropdown-content {
+        width: 100%;
+        position: relative;
+    }
+}
 
         /* Content Sections */
         .instrument-section {
@@ -179,6 +201,7 @@
             </div>
         </div>
 
+        
         <!-- Home Section -->
         <div id="home" class="content-section">
             <h2>Welcome to Our Music Journey</h2>
@@ -188,6 +211,7 @@
         <!-- Flute Sections -->
         <div id="flute-songs" class="content-section" style="display: none;">
             <h2>Favorite Flute Songs</h2>
+            <h1>Explore the Great musical adventure with "Ridhi - The Flutist"!</h1>
             <!-- Add content here -->
         </div>
 
@@ -204,6 +228,7 @@
 
         <div id="drums-artists" class="content-section" style="display: none;">
             <h2>Favorite Drum Artists</h2>
+            <h1>Explore the Great musical adventure with "Dhruv - The Rocking Drummer"!</h1>
             <!-- Add content here -->
         </div>
     </div>
