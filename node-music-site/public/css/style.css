@@ -18,23 +18,40 @@ body {
     padding: 20px;
     text-align: center;
     border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2em;
 }
 
 /* Navigation */
 .nav-menu {
     background-color: #34495e;
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
     margin: 20px 0;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .menu-button, .dropbtn {
-    background-color: #34495e;
+    background-color: #3498db;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     cursor: pointer;
-    margin: 0 5px;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.menu-button:hover, .dropbtn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
 }
 
 /* Dropdown */
@@ -46,18 +63,26 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
     z-index: 1;
+    margin-top: 5px;
 }
 
 .dropdown-content a {
-    color: black;
+    color: #333;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8f9fa;
+    color: #3498db;
 }
 
 .dropdown:hover .dropdown-content {
@@ -66,4 +91,171 @@ body {
 
 /* Content sections */
 .content-section {
-    display: none
+    display: none;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#home {
+    display: block;
+}
+
+/* Kids Profiles */
+.kids-profiles {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.profile-card {
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
+.profile-card h3 {
+    color: #2c3e50;
+    margin: 0 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.profile-info p {
+    margin: 8px 0;
+    color: #2c3e50;
+}
+
+.profile-about h4,
+.achievements h4 {
+    color: #34495e;
+    margin: 0 0 10px 0;
+}
+
+.achievements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.achievements li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.achievements li:before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: #3498db;
+}
+
+/* Tables */
+.songs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+.songs-table th,
+.songs-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.songs-table th {
+    background-color: #34495e;
+    color: white;
+}
+
+.songs-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .kids-profiles {
+        flex-direction: column;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        width: 100%;
+        position: static;
+    }
+
+    .menu-button, .dropbtn {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.content-section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.profile-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Hover Effects */
+.profile-info:hover {
+    background: #eef2f7;
+    transition: background-color 0.3s ease;
+}
+
+.achievements li:hover:before {
+    color: #2980b9;
+    transition: color 0.3s ease;
+}
+
+/* Additional Styles */
+h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+}
+
+p {
+    line-height: 1.6;
+    color: #444;
+}
