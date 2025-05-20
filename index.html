@@ -61,6 +61,45 @@
             text-decoration: none;
             padding: 10px;
         }
+        /* Add to your existing CSS */
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .dropbtn {
+            background-color: #34495e;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        
     </style>
 </head>
 <body>
@@ -70,12 +109,27 @@
             <button class="login-btn" onclick="checkPassword()">Private Access</button>
         </div>
 
-        <div class="nav-menu">
-            <a href="#home">Home</a>
-            <a href="#flute">Flute</a>
-            <a href="#drums">Drums</a>
-            <a href="#showcase">Showcase</a>
+     <div class="nav-menu">
+    <a href="#home">Home</a>
+    <div class="dropdown">
+        <button class="dropbtn">Flute</button>
+        <div class="dropdown-content">
+            <a href="#flute-songs">Favorite Songs</a>
+            <a href="#flute-artists">Favorite Artists</a>
+            <a href="#flute-sheet-music">Sheet Music</a>
         </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Drums</button>
+        <div class="dropdown-content">
+            <a href="#drum-songs">Favorite Songs</a>
+            <a href="#drum-artists">Favorite Artists</a>
+            <a href="#drum-sheet-music">Sheet Music</a>
+        </div>
+    </div>
+    <a href="#duets">Flute & Drums Duets</a>
+</div>
+
 
         <div class="instrument-section">
             <div class="card">
