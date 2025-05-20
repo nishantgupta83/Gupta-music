@@ -1,1 +1,89 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Young Musicians Hub</h1>
+        </div>
+
+        <div class="nav-menu">
+            <button class="menu-button" onclick="showSection('home')">Home</button>
+            <button class="menu-button" onclick="showSection('flute-songs')">Flute Songs</button>
+            <button class="menu-button" onclick="showSection('drum-songs')">Drum Songs</button>
+        </div>
+
+        <!-- Home Section -->
+        <div id="home" class="content-section">
+            <h2>Welcome to Our Music Journey</h2>
+            <p>Explore our musical adventure with flute and drums!</p>
+        </div>
+
+        <!-- Flute Songs Section -->
+        <div id="flute-songs" class="content-section">
+            <h2>Favorite Flute Songs</h2>
+            <table class="songs-table">
+                <thead>
+                    <tr>
+                        <th>Song Name</th>
+                        <th>Artist</th>
+                        <th>Difficulty</th>
+                        <th>YouTube Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% sections.flute.songs.forEach(function(song) { %>
+                        <tr>
+                            <td><%= song.name %></td>
+                            <td><%= song.artist %></td>
+                            <td><%= song.difficulty %></td>
+                            <td>
+                                <a href="<%= song.youtubeUrl %>" target="_blank" class="youtube-link">
+                                    Watch Tutorial
+                                </a>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Drum Songs Section -->
+        <div id="drum-songs" class="content-section">
+            <h2>Favorite Drum Songs</h2>
+            <table class="songs-table">
+                <thead>
+                    <tr>
+                        <th>Song Name</th>
+                        <th>Artist</th>
+                        <th>Difficulty</th>
+                        <th>YouTube Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% sections.drums.songs.forEach(function(song) { %>
+                        <tr>
+                            <td><%= song.name %></td>
+                            <td><%= song.artist %></td>
+                            <td><%= song.difficulty %></td>
+                            <td>
+                                <a href="<%= song.youtubeUrl %>" target="_blank" class="youtube-link">
+                                    Watch Tutorial
+                                </a>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
