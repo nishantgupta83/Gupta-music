@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Young Musicians Hub</title>
     <style>
-        /* Basic CSS for clean layout */
+        /* Base Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -24,8 +24,67 @@
             padding: 20px;
             text-align: center;
             border-radius: 8px;
+            margin-bottom: 20px;
         }
 
+        /* Navigation Styles */
+        .nav-menu {
+            background-color: #34495e;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #34495e;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Content Sections */
         .instrument-section {
             display: flex;
             gap: 20px;
@@ -40,6 +99,14 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
+        .content-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
         .login-btn {
             background-color: #3498db;
             color: white;
@@ -47,59 +114,32 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        .nav-menu {
-            background-color: #34495e;
-            padding: 10px;
-            border-radius: 8px;
-            margin: 10px 0;
+        .login-btn:hover {
+            background-color: #2980b9;
         }
 
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-        }
-        /* Add to your existing CSS */
-        .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-        
-        .dropbtn {
-            background-color: #34495e;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .instrument-section {
+                flex-direction: column;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                align-items: stretch;
+            }
 
-        
+            .dropdown {
+                width: 100%;
+            }
+
+            .dropdown-content {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -109,73 +149,84 @@
             <button class="login-btn" onclick="checkPassword()">Private Access</button>
         </div>
 
-    <!-- Update your nav-menu links with proper IDs -->
-    <div class="nav-menu">
-        <a href="#home" id="home-link">Home</a>
-        <div class="dropdown">
-            <button class="dropbtn" id="flute-btn">Flute</button>
-            <div class="dropdown-content">
-                <a href="#flute-songs">Favorite Songs</a>
-                <a href="#flute-artists">Favorite Artists</a>
-                <a href="#flute-sheet-music">Sheet Music</a>
-            </div>
-        </div>
-    <!-- Similar update for Drums section -->
-</div>
-
-    </div>
-    <div class="dropdown">
-        <button class="dropbtn">Drums</button>
-        <div class="dropdown-content">
-            <a href="#drum-songs">Favorite Songs</a>
-            <a href="#drum-artists">Favorite Artists</a>
-            <a href="#drum-sheet-music">Sheet Music</a>
-        </div>
-    </div>
-
-    <!-- Update your nav-menu links with proper IDs -->
-    <div class="nav-menu">
-        <a href="#home" id="home-link">Home</a>
-        <div class="dropdown">
-            <button class="dropbtn" id="drum-btn">Drum</button>
-            <div class="dropdown-content">
-                <a href="#drum-songs">Favorite Songs</a>
-                <a href="#drum-artists">Favorite Artists</a>
-                <a href="#drum-sheet-music">Sheet Music</a>
-            </div>
-        </div>
-
-    <a href="#duets">Flute & Drums Duets</a>
-</div>
-        <div class="instrument-section">
-            <div class="card">
-                <h2>Flute Section</h2>
-                <div id="flute-public">
-                    <h3>Public Content</h3>
-                    <ul>
-                        <li>Recent Achievements</li>
-                        <li>Public Performances</li>
-                        <li>Practice Tips</li>
-                    </ul>
+        <div class="nav-menu">
+            <a href="#home">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Flute</button>
+                <div class="dropdown-content">
+                    <a href="#flute-songs">Favorite Songs</a>
+                    <a href="#flute-artists">Favorite Artists</a>
+                    <a href="#flute-sheet-music">Sheet Music</a>
+                    <a href="#flute-practice">Practice Tips</a>
                 </div>
             </div>
-
-            <div class="card">
-                <h2>Drums Section</h2>
-                <div id="drums-public">
-                    <h3>Public Content</h3>
-                    <ul>
-                        <li>Recent Achievements</li>
-                        <li>Public Performances</li>
-                        <li>Practice Tips</li>
-                    </ul>
+            <div class="dropdown">
+                <button class="dropbtn">Drums</button>
+                <div class="dropdown-content">
+                    <a href="#drums-songs">Favorite Songs</a>
+                    <a href="#drums-artists">Favorite Artists</a>
+                    <a href="#drums-sheet-music">Sheet Music</a>
+                    <a href="#drums-practice">Practice Tips</a>
                 </div>
             </div>
+            <div class="dropdown">
+                <button class="dropbtn">Duets</button>
+                <div class="dropdown-content">
+                    <a href="#beginner-duets">Beginner Duets</a>
+                    <a href="#intermediate-duets">Intermediate Duets</a>
+                    <a href="#advanced-duets">Advanced Duets</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Home Section -->
+        <div id="home" class="content-section">
+            <h2>Welcome to Our Music Journey</h2>
+            <p>Explore our musical adventure with flute and drums!</p>
+        </div>
+
+        <!-- Flute Sections -->
+        <div id="flute-songs" class="content-section" style="display: none;">
+            <h2>Favorite Flute Songs</h2>
+            <!-- Add content here -->
+        </div>
+
+        <div id="flute-artists" class="content-section" style="display: none;">
+            <h2>Favorite Flute Artists</h2>
+            <!-- Add content here -->
+        </div>
+
+        <!-- Drums Sections -->
+        <div id="drums-songs" class="content-section" style="display: none;">
+            <h2>Favorite Drum Songs</h2>
+            <!-- Add content here -->
+        </div>
+
+        <div id="drums-artists" class="content-section" style="display: none;">
+            <h2>Favorite Drum Artists</h2>
+            <!-- Add content here -->
         </div>
     </div>
 
     <script>
-        // Simple password protection
+        // Navigation Handler
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Hide all content sections
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // Show the clicked section
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                }
+            });
+        });
+
+        // Password Protection
         function checkPassword() {
             const password = prompt("Enter password:");
             if (password === "yourpassword") {
@@ -184,6 +235,9 @@
                 alert("Incorrect password");
             }
         }
+
+        // Show home section by default
+        document.getElementById('home').style.display = 'block';
     </script>
 </body>
 </html>
