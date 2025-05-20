@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 app.get('/', (req, res) => {
     res.render('index', {
-        title: 'Gupta's Music Hub', 
+        title: 'Gupta Music Hub', 
         sections: {
             flute: {
                 songs: [
