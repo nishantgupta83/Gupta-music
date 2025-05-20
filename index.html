@@ -44,7 +44,7 @@
         }
 
         /* Dropdown Styles */
-/* Update your existing dropdown styles with these */
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -167,7 +167,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Young Musicians Hub</h1>
+            <h1>Musicians Hub - Gupta's</h1>
             <button class="login-btn" onclick="checkPassword()">Private Access</button>
         </div>
 
@@ -196,7 +196,7 @@
                 <div class="dropdown-content">
                     <a href="#beginner-duets">Beginner Duets</a>
                     <a href="#intermediate-duets">Intermediate Duets</a>
-                    <a href="#advanced-duets">Advanced Duets</a>
+                   <!-- <a href="#advanced-duets">Advanced Duets</a> -->
                 </div>
             </div>
         </div>
@@ -209,21 +209,73 @@
         </div>
 
         <!-- Flute Sections -->
-        <div id="flute-songs" class="content-section" style="display: none;">
-            <h2>Favorite Flute Songs</h2>
-            <p>Explore the Great musical adventure with "Ridhi - The Flutist"!</p>
-            <!-- Add content here -->
-        </div>
+<!-- Add this section for Flute Songs -->
+<div id="flute-songs" class="content-section" style="display: none;">
+    <h2>Favorite Flute Songs</h2>
+    <h3>Explore the Great musical adventure with "Ridhi - The Flutist"!</h3>
+    <table class="songs-table">
+        <thead>
+            <tr>
+                <th>Song Name</th>
+                <th>Artist</th>
+                <th>YouTube Tutorial</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>The Pink Panther Theme</td>
+                <td>Henry Mancini</td>
+                <td>Intermediate</td>
+                <td>
+                    <a href="https://www.youtube.com/watch?v=example" target="_blank" class="youtube-link">
+                        <i class="fa fa-youtube-play"></i> Watch Tutorial
+                    </a>
+                </td>
+                <td>Practice the trills slowly first</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
 
+    <button class="add-song-btn" onclick="showAddSongForm()">Add New Song</button>
+</div>
+        
         <div id="flute-artists" class="content-section" style="display: none;">
             <h2>Favorite Flute Artists</h2>
             <!-- Add content here -->
         </div>
 
         <!-- Drums Sections -->
-        <div id="drums-songs" class="content-section" style="display: none;">
+        <div id="drums-songs" class="content-section">
             <h2>Favorite Drum Songs</h2>
-            <!-- Add content here -->
+            <table class="songs-table">
+                <thead>
+                    <tr>
+                        <th>Song Name</th>
+                        <th>Artist</th>
+                        <th>Difficulty</th>
+                        <th>YouTube Tutorial</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>In The Air Tonight</td>
+                        <td>Phil Collins</td>
+                        <td>Intermediate</td>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=example" target="_blank" class="youtube-link">
+                                <i class="fa fa-youtube-play"></i> Watch Tutorial
+                            </a>
+                        </td>
+                        <td>Focus on the famous drum break</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        
+            <button class="add-song-btn" onclick="showAddSongForm()">Add New Song</button>
         </div>
 
         <div id="drums-artists" class="content-section" style="display: none;">
