@@ -239,5 +239,47 @@
         // Show home section by default
         document.getElementById('home').style.display = 'block';
     </script>
+
+<script>
+    // Wait for the document to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // Hide all sections initially except home
+        document.querySelectorAll('.content-section').forEach(section => {
+            if (section.id !== 'home') {
+                section.style.display = 'none';
+            }
+        });
+
+        // Navigation handler
+        document.querySelectorAll('.dropdown-content a, .nav-menu > a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                
+                // Hide all sections
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // Show clicked section
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                }
+            });
+        });
+    });
+
+    // Password Protection
+    function checkPassword() {
+        const password = prompt("Enter password:");
+        if (password === "yourpassword") {
+            window.location.href = "private.html";
+        } else {
+            alert("Incorrect password");
+        }
+    }
+</script>
+
 </body>
 </html>
