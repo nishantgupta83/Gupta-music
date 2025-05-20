@@ -1,16 +1,10 @@
 /*
 Express server setup
-
 EJS template engine configuration
-
 Static file serving
-
 Basic routes for home, flute, and drums sections
-
 Sample data structure for songs
-
 Error handling
-
 Server startup configuration
 */
 
@@ -28,7 +22,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 app.get('/', (req, res) => {
     res.render('index', {
-        title: 'Gupta Music Hub', 
+        title: 'Ridhi & Dhruv - Da Young Musicians Hub',
+        children: {
+            child1: {
+                name: 'Ridhi - The Flutist',
+                age: '13',
+                instruments: ['Flute'],
+                about: 'Passionate about music and learning flute. Enjoys classical and modern tunes.',
+                achievements: ['MTAC Honors L5 ', 'First Chair - in Middle School : 8th Grade']
+            },
+            child2: {
+                name: 'Dhruv - The Rockstar',
+                age: '10',
+                instruments: ['Drums'],
+                about: 'Enthusiastic drummer with natural rhythm. Loves creating beats - BoomBox.',
+                achievements: ['Mastered 15+ Songs so far', 'Basic rhythm mastery']
+            }
+        },
         sections: {
             flute: {
                 songs: [
@@ -36,13 +46,7 @@ app.get('/', (req, res) => {
                         name: 'Titanic Theme',
                         artist: 'James Horner',
                         difficulty: 'Intermediate',
-                        youtubeUrl: 'https://youtube.com'
-                    },
-                    {
-                        name: 'Let It Go',
-                        artist: 'Disney',
-                        difficulty: 'Beginner',
-                        youtubeUrl: 'https://youtube.com'
+                        youtubeUrl: 'https://www.youtube.com/watch?v=K69ix4ehy70'
                     }
                 ]
             },
@@ -52,37 +56,11 @@ app.get('/', (req, res) => {
                         name: 'We Will Rock You',
                         artist: 'Queen',
                         difficulty: 'Beginner',
-                        youtubeUrl: 'https://youtube.com'
-                    },
-                    {
-                        name: 'In The Air Tonight',
-                        artist: 'Phil Collins',
-                        difficulty: 'Intermediate',
-                        youtubeUrl: 'https://youtube.com'
+                        youtubeUrl: 'https://www.youtube.com/watch?v=2YA0D5VmyXM'
                     }
                 ]
             }
         }
-    });
-});
-
-// Additional routes for specific sections
-app.get('/flute', (req, res) => {
-    res.render('flute', {
-        title: 'Flute Section'
-    });
-});
-
-app.get('/drums', (req, res) => {
-    res.render('drums', {
-        title: 'Drums Section'
-    });
-});
-
-// Error handling
-app.use((req, res) => {
-    res.status(404).render('404', {
-        title: 'Page Not Found'
     });
 });
 
@@ -92,9 +70,3 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-// Handle server errors
-process.on('unhandledRejection', (err) => {
-    console.log('UNHANDLED REJECTION! 💥 Shutting down...');
-    console.log(err.name, err.message);
-    process.exit(1);
-});
