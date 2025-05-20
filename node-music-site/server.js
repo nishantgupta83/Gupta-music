@@ -1,3 +1,19 @@
+/*
+Express server setup
+
+EJS template engine configuration
+
+Static file serving
+
+Basic routes for home, flute, and drums sections
+
+Sample data structure for songs
+
+Error handling
+
+Server startup configuration
+*/
+
 const express = require('express');
 const path = require('path');
 const app = express();
