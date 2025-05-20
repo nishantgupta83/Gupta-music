@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Young Musicians Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Ridhi and Dhruv's Music Hub</title>
     <style>
         /* Base Styles */
         body {
@@ -44,51 +45,51 @@
         }
 
         /* Dropdown Styles */
+            
+            .dropdown {
+                position: relative;
+                display: inline-block;
+                margin-right: 10px;
+            }
+            
+            .dropbtn {
+                background-color: #34495e;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                font-size: 16px;
+                border-radius: 4px;
+            }
+            
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #ffffff;
+                min-width: 200px;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+                z-index: 1;
+                border-radius: 4px;
+                margin-top: 5px;
+            }
+            
+            .dropdown-content a {
+                color: #333333;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                transition: background-color 0.2s;
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            
+            .dropdown-content a:hover {
+                background-color: #f5f5f5;
+            }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.dropbtn {
-    background-color: #34495e;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 4px;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 4px;
-    margin-top: 5px;
-}
-
-.dropdown-content a {
-    color: #333333;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.2s;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f5f5f5;
-}
-
-/* Add this for better mobile responsiveness */
+/* mobile responsiveness */
 @media (max-width: 768px) {
     .dropdown {
         width: 100%;
@@ -162,6 +163,65 @@
                 width: 100%;
             }
         }
+        /* CSS for Songs Table*/
+                .songs-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin: 20px 0;
+                    background: white;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+                }
+                
+                .songs-table th,
+                .songs-table td {
+                    padding: 12px 15px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                
+                .songs-table th {
+                    background-color: #34495e;
+                    color: white;
+                }
+                
+                .songs-table tr:hover {
+                    background-color: #f5f5f5;
+                }
+                
+                .youtube-link {
+                    color: #c4302b;
+                    text-decoration: none;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 5px;
+                }
+                
+                .youtube-link:hover {
+                    text-decoration: underline;
+                }
+                
+                .add-song-btn {
+                    background-color: #27ae60;
+                    color: white;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    margin-top: 20px;
+                }
+                
+                .add-song-btn:hover {
+                    background-color: #219a52;
+                }
+                
+                /* Responsive table */
+                @media (max-width: 768px) {
+                    .songs-table {
+                        display: block;
+                        overflow-x: auto;
+                    }
+                }
+
     </style>
 </head>
 <body>
@@ -209,7 +269,7 @@
         </div>
 
         <!-- Flute Sections -->
-<!-- Add this section for Flute Songs -->
+
 <div id="flute-songs" class="content-section" style="display: none;">
     <h2>Favorite Flute Songs</h2>
     <h3>Explore the Great musical adventure with "Ridhi - The Flutist"!</h3>
@@ -303,16 +363,6 @@
             });
         });
 
-        // Password Protection
-        function checkPassword() {
-            const password = prompt("Enter password:");
-            if (password === "yourpassword") {
-                window.location.href = "private.html";
-            } else {
-                alert("Incorrect password");
-            }
-        }
-
         // Show home section by default
         document.getElementById('home').style.display = 'block';
     </script>
@@ -320,12 +370,14 @@
 <script>
     // Wait for the document to be fully loaded
     document.addEventListener('DOMContentLoaded', function() {
-        // Hide all sections initially except home
-        document.querySelectorAll('.content-section').forEach(section => {
-            if (section.id !== 'home') {
-                section.style.display = 'none';
-            }
-        });
+                        // Hide all sections initially except home
+                        document.querySelectorAll('.content-section').forEach(section => 
+                            {
+                            if (section.id !== 'home') 
+                                {
+                                section.style.display = 'none';
+                                }
+                            });
 
         // Navigation handler
         document.querySelectorAll('.dropdown-content a, .nav-menu > a').forEach(link => {
@@ -343,6 +395,8 @@
                 if (targetSection) {
                     targetSection.style.display = 'block';
                 }
+
+                
             });
         });
     });
@@ -356,6 +410,41 @@
             alert("Incorrect password");
         }
     }
+
+            // scripting funtions for Table.
+        function showAddSongForm() {
+            const newSong = {
+                name: prompt("Enter song name:"),
+                artist: prompt("Enter artist name:"),
+                difficulty: prompt("Enter difficulty (Beginner/Intermediate/Advanced):"),
+                youtube: prompt("Enter YouTube URL:"),
+                notes: prompt("Enter practice notes:")
+            };
+        
+            if (newSong.name && newSong.artist) {
+                addSongToTable(newSong);
+            }
+        }
+        
+        function addSongToTable(song) {
+            const tbody = document.querySelector('.songs-table tbody');
+            const newRow = document.createElement('tr');
+            
+            newRow.innerHTML = `
+                <td>${song.name}</td>
+                <td>${song.artist}</td>
+                <td>${song.difficulty}</td>
+                <td>
+                    <a href="${song.youtube}" target="_blank" class="youtube-link">
+                        <i class="fa fa-youtube-play"></i> Watch Tutorial
+                    </a>
+                </td>
+                <td>${song.notes}</td>
+            `;
+            
+            tbody.appendChild(newRow);
+        }
+
 </script>
 
 </body>
